@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicidad para Restaurantes - Llena Tu Local de Clientes Todos los Días - Grado33</title>
+    <meta name="description" content="🍽️ Publicidad Digital ESPECIALIZADA para Restaurantes. Google Food Ads, Meta Menus, Instagram Reels de Comida. +62% Reservas en 30 Días. Casos Reales Venezuela.">
+    <meta name="keywords" content="publicidad para restaurantes, google ads restaurantes, facebook ads comida, instagram restaurantes, marketing digital gastronomia, delivery seo, menus digitales">
+    
+    <!-- SCHEMA RESTAURANT -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Grado33 Marketing Gastronómico",
+        "description": "Agencia especializada en publicidad digital para restaurantes y negocios de comida",
+        "servesCuisine": ["Marketing Digital", "Publicidad Restaurantes", "SEO Delivery"]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --secondary: #c0392b;
+            --accent: #f39c12;
+            --success: #27ae60;
+            --dark: #2c3e50;
+        }
+        
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.7; 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        .hero { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); 
+            color: white; 
+            padding: 150px 0 100px; 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+        .btn { 
+            background: var(--success); 
+            color: white; 
+            padding: 18px 35px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin: 10px; 
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+            border: none;
+            font-size: 1.1em;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.6);
+        }
+        .btn-secondary { 
+            background: transparent; 
+            color: white; 
+            padding: 18px 35px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin: 10px; 
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        .benefits { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            margin: 50px 0; 
+        }
+        .benefit { 
+            background: #f8f9fa; 
+            padding: 40px 30px; 
+            border-radius: 15px; 
+            text-align: center; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        .benefit:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .pricing { 
+            background: #f8f9fa; 
+            padding: 100px 0; 
+            text-align: center; 
+        }
+        .price-cards { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+            margin-top: 50px; 
+        }
+        .price-card { 
+            background: white; 
+            padding: 50px 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .price-card.featured {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+        .price-card.featured::before {
+            content: 'MÁS POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 45px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .cta { 
+            background: var(--dark); 
+            color: white; 
+            padding: 100px 0; 
+            text-align: center; 
+        }
+        h1 { 
+            font-size: 3em; 
+            margin-bottom: 20px; 
+            font-weight: 800;
+        }
+        h2 { 
+            font-size: 2.5em; 
+            margin-bottom: 30px; 
+            text-align: center; 
+            font-weight: 700;
+        }
+        h3 { 
+            font-size: 1.5em; 
+            margin: 25px 0 15px; 
+            color: var(--dark); 
+            font-weight: 600;
+        }
+        p { 
+            margin-bottom: 20px; 
+            font-size: 1.1em; 
+            color: #333; 
+        }
+        
+        .internal-link { 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        .internal-link:hover { 
+            text-decoration: underline; 
+        }
+        .highlight { 
+            background: #ffeb3b; 
+            color: #333; 
+            padding: 3px 8px; 
+            border-radius: 5px; 
+            font-weight: bold;
+        }
+        .restaurant-colors { 
+            color: var(--primary); 
+        }
+        .content-section { 
+            margin: 80px 0; 
+        }
+        .strategy-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+            margin: 40px 0; 
+        }
+        .strategy-item { 
+            background: white; 
+            padding: 30px 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
+            border-left: 4px solid var(--success); 
+            transition: all 0.3s ease;
+        }
+        .strategy-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        /* MEJORAS DE CONTRASTE - TEXTO BLANCO Y NEGRITA */
+        .white-bold { 
+            color: white !important; 
+            font-weight: bold !important; 
+        }
+        .cta-link { 
+            color: #ffa726 !important; 
+            font-weight: bold; 
+        }
+        .footer-text { 
+            color: white !important; 
+            font-weight: bold !important; 
+        }
+        
+        /* ESTILOS ESPECÍFICOS GASTRONOMÍA */
+        .food-results { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 20px; 
+            margin: 40px 0; 
+        }
+        .food-result { 
+            background: #ffeaa7; 
+            padding: 25px 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            box-shadow: 0 5px 15px rgba(255, 234, 167, 0.3);
+        }
+        .food-stat { 
+            font-size: 2.5em; 
+            color: var(--primary); 
+            font-weight: 800; 
+            line-height: 1;
+        }
+        .menu-feature { 
+            background: #f0e6f6; 
+            padding: 40px 30px; 
+            border-radius: 15px; 
+            margin: 30px 0; 
+            border-left: 4px solid #9b59b6;
+        }
+        .delivery-optimization { 
+            background: #d5f4e6; 
+            padding: 40px 30px; 
+            border-radius: 15px; 
+            margin: 30px 0; 
+            border-left: 4px solid var(--success);
+        }
+        .instagram-reels { 
+            background: #e8f4fd; 
+            padding: 40px 30px; 
+            border-radius: 15px; 
+            margin: 30px 0; 
+            border-left: 4px solid #3498db;
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* ESTILOS PARA EL MENÚ PERSONALIZADO */
+        .custom-navbar {
+            background: #f8f9fa !important;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .custom-navbar .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .custom-navbar .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .custom-navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .custom-navbar .logo-text {
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .custom-navbar .logo-subtext {
+            font-size: 0.9em;
+            line-height: 1.2;
+        }
+
+        .custom-navbar .nav-main {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .custom-navbar .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #007bff;
+        }
+
+        .custom-navbar .dropdown {
+            position: relative;
+        }
+
+        .custom-navbar .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .custom-navbar .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            min-width: 280px;
+            padding: 10px 0;
+            display: none;
+            z-index: 1001;
+        }
+
+        .custom-navbar .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .custom-navbar .dropdown-item {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-navbar .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .custom-navbar .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .custom-navbar .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-navbar .whatsapp-btn:hover {
+            background: #1da851;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- MENÚ COMPLETO CON SERVICIOS + SOLUCIONES -->
+    <nav class="custom-navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="/assets/images/logo-grado33.jpg" alt="Grado33 Marketing Digital Barinas">
+                <div>
+                    <div class="logo-text">GRADO33</div>
+                    <div class="logo-subtext">MARKETING BARINAS</div>
+                </div>
+            </a>
+            
+            <!-- Menú Principal -->
+            <div class="nav-main">
+                <a href="/" class="nav-link">Inicio</a>
+                
+                <!-- Dropdown SERVICIOS -->
+                <div class="dropdown">
+                    <a href="/servicios/" class="nav-link dropdown-toggle">
+                        Servicios <span style="margin-left: 5px;">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="/servicios/creacion-y-diseno-web/" class="dropdown-item">Diseño Web</a>
+                        <a href="/servicios/tiendas-online-ecommerce/" class="dropdown-item">Ecommerce</a>
+                        <a href="/servicios/posicionamiento-seo/" class="dropdown-item">Posicionamiento SEO</a>
+                        <a href="/servicios/publicidad-google-ads/" class="dropdown-item">Google Ads</a>
+                        <a href="/servicios/publicidad-meta-ads/" class="dropdown-item">Meta Ads</a>
+                        <a href="/servicios/gestion-de-redes-sociales/" class="dropdown-item">Redes Sociales</a>
+                        <a href="/servicios/mantenimiento-web/" class="dropdown-item">Mantenimiento Web</a>
+                        <a href="/servicios/email-marketing/" class="dropdown-item">Email Marketing</a>
+                        <a href="/servicios/diseno-grafico-publicitario/" class="dropdown-item">Diseño Gráfico</a>
+                        <a href="/servicios/consultoria-marketing-digital/" class="dropdown-item">Consultoría</a>
+                    </div>
+                </div>
+                
+                <!-- Dropdown SOLUCIONES -->
+                <div class="dropdown">
+                    <a href="/soluciones/" class="nav-link dropdown-toggle">
+                        Soluciones <span style="margin-left: 5px;">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="/soluciones/crear-pagina-web/" class="dropdown-item">Crear Página Web</a>
+                        <a href="/soluciones/crear-pagina-web-para-mi-negocio/" class="dropdown-item">Web para Mi Negocio</a>
+                        <a href="/soluciones/crear-pagina-web-para-vender/" class="dropdown-item">Web para Vender</a>
+                        <a href="/soluciones/precio-de-una-pagina-web/" class="dropdown-item">Precio Página Web</a>
+                        <a href="/soluciones/publicidad-para-mi-negocio/" class="dropdown-item">Publicidad para Negocios</a>
+                        <a href="/soluciones/que-es-marketing-digital/" class="dropdown-item">¿Qué es Marketing Digital?</a>
+                        <a href="/soluciones/diseno-pagina-web-gratis/" class="dropdown-item">Diseño Web Gratis</a>
+                        <a href="/soluciones/publicidad-para-restaurantes/" class="dropdown-item">Publicidad Restaurantes</a>
+                        <a href="/soluciones/pagina-web-para-inmobiliarias/" class="dropdown-item">Web para Inmobiliarias</a>
+                        <a href="/soluciones/posicionamiento-web-seo-local/" class="dropdown-item">SEO Local</a>
+                    </div>
+                </div>
+                
+                <a href="/portafolio/" class="nav-link">Portafolio</a>
+                <a href="/contacto/" class="nav-link">Contacto</a>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/584167775771" class="whatsapp-btn">
+                    <span>📱</span> WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION - H1 PRINCIPAL -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="white-bold">Publicidad para Restaurantes - Llena Tu Local de Clientes Todos los Días</h1>
+            <p style="font-size: 1.4em; margin: 30px 0; line-height: 1.6;"><strong>¿Mesas vacías en horario pico? Implementamos <span class="highlight">estrategias de publicidad ESPECIALIZADAS para restaurantes</span> que generan +62% más reservas y +45% en pedidos para llevar. Resultados en 15 días.</strong></p>
+            <div style="margin-top: 40px;">
+                <a href="https://wa.me/584167775771?text=Quiero%20publicidad%20especializada%20para%20mi%20restaurante" class="btn">🍽️ Auditoría Gratuita de Mi Restaurante</a>
+                <a href="#resultados-reales" class="btn-secondary">📊 Ver Casos Reales en Venezuela</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1: PROBLEMAS ESPECÍFICOS RESTAURANTES - H2 -->
+    <section class="container content-section">
+        <h2 class="section-title">Los 5 Problemas que Matan las Utilidades de Tu Restaurante <br><small style="font-size: 0.6em; color: #666;">(Y Cómo los Solucionamos)</small></h2>
+        
+        <p style="text-align: center; font-size: 1.2em; max-width: 900px; margin: 0 auto 50px;">La industria gastronómica en Venezuela enfrenta desafíos únicos. Hemos identificado los <strong>puntos críticos que afectan el flujo de clientes</strong> y desarrollado soluciones específicas para cada uno:</p>
+
+        <div class="benefits">
+            <div class="benefit">
+                <div style="font-size: 3em; margin-bottom: 20px;">📉</div>
+                <h3>Estacionalidad Brutal</h3>
+                <p>Lunes-vacío vs Sábado-colapsado. Implementamos <strong>campañas de "happy hour digital"</strong> y promociones para llenar horas muertas. Con <a href="/servicios/publicidad-meta-ads/" class="internal-link">Meta Ads segmentado</a>, atraemos clientes en tus horas más lentas.</p>
+            </div>
+            <div class="benefit">
+                <div style="font-size: 3em; margin-bottom: 20px;">🍕</div>
+                <h3>Competencia de Delivery Apps</h3>
+                <p>Rappi y PedidosYa se quedan con el 30% de tus utilidades. Creamos tu <strong>propio sistema de delivery directo</strong> integrado con <a href="/soluciones/crear-pagina-web-para-vender/" class="internal-link">tu página web</a>. Ahorras comisiones y fidelizas clientes.</p>
+            </div>
+            <div class="benefit">
+                <div style="font-size: 3em; margin-bottom: 20px;">📱</div>
+                <h3>Clientes que No Te Encuentran</h3>
+                <p>Cuando alguien busca "restaurante cerca de mí" y no apareces, es dinero perdido. Optimizamos tu <a href="/soluciones/posicionamiento-web-seo-local/" class="internal-link">SEO local gastronómico</a> para que aparezcas en los primeros resultados de Google Maps.</p>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit">
+                <div style="font-size: 3em; margin-bottom: 20px;">🎯</div>
+                <h3>Publicidad que No Convierte</h3>
+                <p>Anuncios genéricos = dinero tirado. Desarrollamos <strong>campañas hiper-segmentadas</strong> por tipo de comida, ocasión (citas, cumpleaños, negocios) y ubicación exacta. Cada dólar genera resultados medibles.</p>
+            </div>
+            <div class="benefit">
+                <div style="font-size: 3em; margin-bottom: 20px;">📸</div>
+                <h3>Fotos que No Antojan</h3>
+                <p>Imágenes oscuras o de mala calidad ahuyentan clientes. Incluimos <strong>sesión fotográfica profesional de tus platos estrella</strong> en todos nuestros planes. Comida que se ve deliciosa = más pedidos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: RESULTADOS COMPROBABLES - H2 -->
+    <section id="resultados-reales" style="background: #f8f9fa; padding: 100px 0;">
+        <div class="container content-section">
+            <h2 class="section-title">Resultados Reales que Hemos Generado para Restaurantes Venezolanos</h2>
+            
+            <p style="text-align: center; font-size: 1.2em; max-width: 900px; margin: 0 auto 50px;">No son promesas vacías. Estos son <strong>números verificables</strong> de restaurantes como el tuyo que confiaron en nuestras estrategias especializadas:</p>
+
+            <div class="food-results">
+                <div class="food-result">
+                    <div class="food-stat">+62%</div>
+                    <p style="font-weight: 600; margin: 10px 0 0;">Reservas en 30 días</p>
+                </div>
+                <div class="food-result">
+                    <div class="food-stat">$1.20</div>
+                    <p style="font-weight: 600; margin: 10px 0 0;">Costo por reserva</p>
+                </div>
+                <div class="food-result">
+                    <div class="food-stat">+45%</div>
+                    <p style="font-weight: 600; margin: 10px 0 0;">Pedidos para llevar</p>
+                </div>
+                <div class="food-result">
+                    <div class="food-stat">3.2x</div>
+                    <p style="font-weight: 600; margin: 10px 0 0;">ROI en campañas</p>
+                </div>
+                <div class="food-result">
+                    <div class="food-stat">24/7</div>
+                    <p style="font-weight: 600; margin: 10px 0 0;">Reservas automáticas</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 60px;">
+                <div style="background: #ffeaa7; padding: 35px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 234, 167, 0.3);">
+                    <h3>Restaurante "La Casona Italiana" - Barinas</h3>
+                    <p><strong>Problema:</strong> Solo 40% ocupación en cenas<br>
+                    <strong>Solución:</strong> Campañas "Cena Romántica" + Instagram Reels<br>
+                    <strong>Inversión:</strong> $180/mes en publicidad<br>
+                    <strong>Resultado:</strong> 92% ocupación fines de semana, +28 reservas/semana</p>
+                </div>
+                <div style="background: #ffeaa7; padding: 35px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 234, 167, 0.3);">
+                    <h3>Pizzería "El Hornero" - Barinas</h3>
+                    <p><strong>Problema:</strong> Dependencia de Rappi (25% comisión)<br>
+                    <strong>Solución:</strong> <a href="/soluciones/crear-pagina-web-para-vender/" class="internal-link">Web con delivery propio</a> + Google Food Ads<br>
+                    <strong>Inversión:</strong> $220/mes total<br>
+                    <strong>Resultado:</strong> 65% pedidos via web propia, ahorro $1,200/mes en comisiones</p>
+                </div>
+                <div style="background: #ffeaa7; padding: 35px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 234, 167, 0.3);">
+                    <h3>Cafetería "Aroma & Sabor" - Barinas</h3>
+                    <p><strong>Problema:</strong> Poco tráfico en horas de oficina<br>
+                    <strong>Solución:</strong> Campañas "Coffee Break" + Email marketing corporativo<br>
+                    <strong>Inversión:</strong> $150/mes en publicidad<br>
+                    <strong>Resultado:</strong> +45 clientes diarios en horas valle, 290% ROI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: ESTRATEGIAS ESPECIALIZADAS - H2 -->
+    <section class="container content-section">
+        <h2 class="section-title">Estrategias de Publicidad 100% Especializadas para Restaurantes</h2>
+        
+        <p style="text-align: center; font-size: 1.2em; max-width: 900px; margin: 0 auto 50px;">El marketing gastronómico requiere <strong>tácticas específicas que solo dominan expertos en el nicho</strong>. Estas son nuestras armas secretas:</p>
+
+        <div class="strategy-grid">
+            <div class="strategy-item">
+                <h3>📍 Google Food Ads</h3>
+                <p>Anuncios que aparecen CUANDO alguien busca "comida cerca de mí". <strong>Segmentación por radio de 1-5 km</strong> desde tu ubicación. Captamos hambre inmediata con <a href="/servicios/publicidad-google-ads/" class="internal-link">Google Ads local ultra-direccionado</a>.</p>
+            </div>
+            <div class="strategy-item">
+                <h3>📸 Instagram Reels de Comida</h3>
+                <p>Videos cortos y adictivos de tus platos en preparación. <strong>+3x más engagement</strong> que fotos normales. Ideal para mostrar especialidades del día y crear antojo inmediato.</p>
+            </div>
+            <div class="strategy-item">
+                <h3>🎯 Meta Menus Dinámicos</h3>
+                <p>Anuncios que muestran tus platos MÁS populares automáticamente. <strong>Algoritmos de Facebook optimizados para comida</strong>. Segmentación por amantes de comida italiana, mexicana, etc.</p>
+            </div>
+            <div class="strategy-item">
+                <h3>📞 Click-to-Order WhatsApp</h3>
+                <p>Botones directos de "Pedir por WhatsApp" en todos tus anuncios. <strong>Reducción de fricción al máximo</strong>. Clientes ordenan en 2 clicks sin llamadas telefónicas.</p>
+            </div>
+        </div>
+
+        <div class="menu-feature">
+            <h3>🍽️ Menú Digital Interactivo Incluido</h3>
+            <p>Todos nuestros planes incluyen <strong>menú digital con fotos profesionales de tus platos</strong>, categorías organizadas, precios actualizables en tiempo real y integración con sistema de reservas. Los clientes ven, antojan y reservan en el mismo lugar.</p>
+        </div>
+
+        <div class="delivery-optimization">
+            <h3>🚚 Optimización Total para Delivery</h3>
+            <p>Configuramos tu <strong>ecosistema de delivery propio</strong>: página web con carrito, múltiples métodos de pago (Pago Móvil, transferencias, efectivo), tracking de pedidos y optimización de rutas. <a href="/soluciones/crear-pagina-web-para-vender/" class="internal-link">Deja de depender de apps terceras</a> y sus altas comisiones.</p>
+        </div>
+
+        <div class="instagram-reels">
+            <h3>🎥 Producción de Reels Profesionales</h3>
+            <p>Incluimos <strong>producción mensual de 4-8 Reels profesionales</strong> mostrando tus especialidades, detrás de cámara, testimonios de clientes y promociones especiales. Contenido fresco constante que mantiene engagement alto.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: PLANES ESPECIALIZADOS - H2 -->
+    <section class="pricing">
+        <div class="container content-section">
+            <h2 class="section-title">Planes de Publicidad ESPECIALIZADOS para Restaurantes</h2>
+            
+            <p style="text-align: center; font-size: 1.2em; max-width: 900px; margin: 0 auto 50px;">Hemos creado <strong>paquetes específicos para diferentes tipos y tamaños de restaurantes</strong>. Todo incluido - desde fotografía hasta análisis de competencia:</p>
+
+            <div class="price-cards">
+                <div class="price-card">
+                    <h3>Plan "Cafetería" - $297/mes</h3>
+                    <p style="color: #666; font-style: italic;">Ideal para cafés y negocios de comida rápida</p>
+                    <ul style="text-align: left; margin: 30px 0;">
+                        <li style="margin-bottom: 15px; padding-left: 10px;"><strong>1 plataforma (Instagram O Google Ads)</strong></li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Inversión publicitaria: $200-$300/mes</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">8 Reels profesionales mensuales</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Menú digital básico</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Segmentación local 3km radio</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Reporte semanal de ventas</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Soporte prioritario WhatsApp</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Botón WhatsApp Order</li>
+                    </ul>
+                    <a href="https://wa.me/584167775771?text=Plan%20Cafetería%20$297" class="btn" style="width: 100%; box-sizing: border-box;">Para Cafés y Snacks</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>Plan "Restaurante" - $497/mes</h3>
+                    <p style="color: #666; font-style: italic;">Para restaurantes establecidos con delivery</p>
+                    <ul style="text-align: left; margin: 30px 0;">
+                        <li style="margin-bottom: 15px; padding-left: 10px;"><strong>2 plataformas (Instagram + Google Ads)</strong></li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Inversión publicitaria: $400-$600/mes</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">12 Reels profesionales mensuales</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Menú digital interactivo completo</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Sistema de reservas online</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Segmentación local 5km radio</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Email marketing básico</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Dashboard en tiempo real</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Sesión fotográfica de 10 platos</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;"><a href="/servicios/posicionamiento-seo/" class="internal-link">+ SEO Local Opcional</a></li>
+                    </ul>
+                    <a href="https://wa.me/584167775771?text=Plan%20Restaurante%20$497" class="btn" style="width: 100%; box-sizing: border-box; background: var(--primary);">Para Restaurantes Establecidos</a>
+                </div>
+                <div class="price-card">
+                    <h3>Plan "Gourmet" - $797/mes</h3>
+                    <p style="color: #666; font-style: italic;">Para restaurantes premium y alta cocina</p>
+                    <ul style="text-align: left; margin: 30px 0;">
+                        <li style="margin-bottom: 15px; padding-left: 10px;"><strong>3+ plataformas integradas</strong></li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Inversión publicitaria: $700-$1,000/mes</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">20+ Reels y contenido premium</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Menú digital con realidad aumentada</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Sistema de reservas avanzado</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Segmentación por tipo de cliente</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Email marketing avanzado</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Dashboard analytics premium</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Sesión fotográfica profesional completa</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Video comercial de 60 segundos</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;">Análisis de competencia mensual</li>
+                        <li style="margin-bottom: 15px; padding-left: 10px;"><a href="/servicios/consultoria-marketing-digital/" class="internal-link">Consultoría Gastronómica</a></li>
+                    </ul>
+                    <a href="https://wa.me/584167775771?text=Plan%20Gourmet%20$797" class="btn" style="width: 100%; box-sizing: border-box;">Para Alta Cocina</a>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; text-align: center; font-size: 1.1em;"><strong>🎁 Incluye en TODOS los planes:</strong> Configuración inicial, creación de contenido, gestión diaria de campañas, optimización continua, reportes detallados y <strong>sesión fotográfica de tus platos</strong>. No incluye inversión publicitaria (manejada por separado con transparencia total).</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: PREGUNTAS ESPECÍFICAS - H2 -->
+    <section class="container content-section">
+        <h2 class="section-title">Preguntas que Todo Restaurantero Nos Hace <br><small style="font-size: 0.6em; color: #666;">(Respuestas Sinceras)</small></h2>
+        
+        <p style="text-align: center; font-size: 1.2em; max-width: 900px; margin: 0 auto 50px;">Respondemos las <strong>dudas más comunes</strong> de dueños de restaurantes sobre publicidad digital especializada:</p>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="background: #e8f4fd; padding: 35px 30px; border-radius: 15px; margin: 25px 0; border-left: 4px solid #3498db;">
+                <h3>¿Realmente funciona la publicidad digital para restaurantes en Venezuela?</h3>
+                <p><strong>Absolutamente SÍ.</strong> El 68% de los venezolanos busca restaurantes en Google antes de salir. El 72% decide qué comer basado en Instagram y Facebook. Si no estás ahí, <strong>tus competidores se están llevando tus clientes</strong>. Nuestros casos demuestran ROI de 2.5x-4x en promedio.</p>
+            </div>
+            
+            <div style="background: #e8f4fd; padding: 35px 30px; border-radius: 15px; margin: 25px 0; border-left: 4px solid #3498db;">
+                <h3>¿Cuánto tiempo toma ver resultados reales en mi flujo de clientes?</h3>
+                <p>Los <strong>primeros clientes nuevos llegan en 3-7 días</strong>. La optimización completa y máximo flujo se alcanza entre el día 15-30. Comparado con métodos tradicionales (volantes, radio) que toman semanas, la publicidad digital es <strong>inmediata y 100% medible</strong>.</p>
+            </div>
+            
+            <div style="background: #e8f4fd; padding: 35px 30px; border-radius: 15px; margin: 25px 0; border-left: 4px solid #3498db;">
+                <h3>¿Qué es mejor: Instagram o Google Ads para mi restaurante?</h3>
+                <p>Depende de tu objetivo: <strong>Instagram</strong> es ideal para crear antojo y mostrar experiencia. <strong>Google Ads</strong> es perfecto para captar hambre inmediata ("comida cerca de mí"). La <strong>combinación de ambos</strong> genera los mejores resultados - por eso nuestros planes incluyen múltiples plataformas.</p>
+            </div>
+            
+            <div style="background: #e8f4fd; padding: 35px 30px; border-radius: 15px; margin: 25px 0; border-left: 4px solid #3498db;">
+                <h3>¿Cómo manejan las quejas o comentarios negativos en redes?</h3>
+                <p>Tenemos <strong>protocolos establecidos de community management</strong>. Respondemos todas las consultas en menos de 2 horas, convertimos quejas en oportunidades y manejamos crisis de reputación de forma profesional. Tu imagen está en buenas manos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL - H2 -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="white-bold">¿Listo para Llenar Tu Restaurante de Clientes Todos los Días?</h2>
+            <p style="font-size: 1.3em; margin: 30px 0; line-height: 1.6;" class="white-bold"><strong>Mientras lees esto, otros restaurantes en tu zona están captando a tus clientes potenciales con publicidad digital bien ejecutada. Cada día de espera son mesas vacías y ingresos perdidos.</strong></p>
+            
+            <p class="white-bold" style="font-size: 1.1em; margin: 30px 0;">Completa tu estrategia gastronómica con: 
+                <a href="/soluciones/crear-pagina-web-para-vender/" class="cta-link">🌐 Página Web con Delivery</a> | 
+                <a href="/soluciones/posicionamiento-web-seo-local/" class="cta-link">🔍 SEO para Restaurantes</a> | 
+                <a href="/servicios/gestion-de-redes-sociales/" class="cta-link">📱 Gestión de Redes Sociales</a>
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 50px 0;">
+                <a href="https://wa.me/584167775771?text=Quiero%20una%20auditoría%20gratuita%20para%20mi%20restaurante" class="btn">🍽️ Auditoría Gratuita de 30 Min</a>
+                <a href="/portafolio/" class="btn">📊 Ver Restaurantes Clientess</a>
+                <a href="/soluciones/precio-de-una-pagina-web/" class="btn">💰 Ver Planes y Precios</a>
+            </div>
+            
+            <p class="white-bold" style="font-size: 1.1em;"><strong>🎁 Oferta Especial para Restaurantes:</strong> <a href="/servicios/diseno-grafico-publicitario/" class="cta-link">Diseño profesional de menú físico GRATIS</a> al contratar cualquier plan. ¡Solo primeros 5 restaurantes este mes!</p>
+        </div>
+    </section>
+
+    <!-- FOOTER CON ENLACES SEO -->
+    <footer style="background: #222; padding: 70px 0 50px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+                <div>
+                    <h4 class="footer-text">Restaurantes y Comida</h4>
+                    <a href="/soluciones/publicidad-para-restaurantes/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Publicidad Restaurantes</a>
+                    <a href="/soluciones/crear-pagina-web-para-vender/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Web para Restaurantes</a>
+                    <a href="/servicios/publicidad-google-ads/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Google Ads Comida</a>
+                    <a href="/servicios/publicidad-meta-ads/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Meta Ads Gastronomía</a>
+                </div>
+                <div>
+                    <h4 class="footer-text">Marketing Digital</h4>
+                    <a href="/soluciones/publicidad-para-mi-negocio/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Publicidad Negocios</a>
+                    <a href="/servicios/posicionamiento-seo/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Posicionamiento SEO</a>
+                    <a href="/servicios/gestion-de-redes-sociales/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Redes Sociales</a>
+                    <a href="/servicios/email-marketing/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Email Marketing</a>
+                </div>
+                <div>
+                    <h4 class="footer-text">Soluciones Web</h4>
+                    <a href="/soluciones/crear-pagina-web-para-mi-negocio/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Web para Negocios</a>
+                    <a href="/soluciones/precio-de-una-pagina-web/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Precios Web</a>
+                    <a href="/soluciones/diseno-pagina-web-gratis/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Web Gratis</a>
+                    <a href="/soluciones/que-es-marketing-digital/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Marketing Digital</a>
+                </div>
+                <div>
+                    <h4 class="footer-text">Grado33 Barinas</h4>
+                    <a href="/barinas/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Nosotros</a>
+                    <a href="/portafolio/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Portafolio</a>
+                    <a href="/contacto/" class="footer-text" style="display: block; margin: 8px 0; text-decoration: none;">Contacto</a>
+                    <a href="https://wa.me/584167775771" class="footer-text" style="color: #25D366; display: block; margin: 8px 0; text-decoration: none;">WhatsApp +58 416-7775771</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para los dropdowns
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar todos los dropdowns
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const menu = dropdown.querySelector('.dropdown-menu');
+                
+                dropdown.addEventListener('mouseenter', function() {
+                    menu.style.display = 'block';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    menu.style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
