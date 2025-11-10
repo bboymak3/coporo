@@ -35,20 +35,20 @@
             
             <!-- Dropdown SOLUCIONES -->
             <div class="dropdown">
-                <a href="#" class="nav-link dropdown-toggle">
+                <a href="/soluciones/" class="nav-link dropdown-toggle">
                     Soluciones <span style="margin-left: 5px;">▼</span>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="/crear-pagina-web/" class="dropdown-item">Crear Página Web</a>
-                    <a href="/crear-pagina-web-para-mi-negocio/" class="dropdown-item">Web para Mi Negocio</a>
-                    <a href="/crear-pagina-web-para-vender/" class="dropdown-item">Web para Vender</a>
-                    <a href="/precio-de-una-pagina-web/" class="dropdown-item">Precio Página Web</a>
-                    <a href="/publicidad-para-mi-negocio/" class="dropdown-item">Publicidad para Negocios</a>
-                    <a href="/que-es-marketing-digital/" class="dropdown-item">¿Qué es Marketing Digital?</a>
-                    <a href="/diseno-pagina-web-gratis/" class="dropdown-item">Diseño Web Gratis</a>
-                    <a href="/publicidad-para-restaurantes/" class="dropdown-item">Publicidad Restaurantes</a>
-                    <a href="/pagina-web-para-inmobiliarias/" class="dropdown-item">Web para Inmobiliarias</a>
-                    <a href="/posicionamiento-web-seo-local/" class="dropdown-item">SEO Local</a>
+                    <a href="/soluciones/crear-pagina-web/" class="dropdown-item">Crear Página Web</a>
+                    <a href="/soluciones/crear-pagina-web-para-mi-negocio/" class="dropdown-item">Web para Mi Negocio</a>
+                    <a href="/soluciones/crear-pagina-web-para-vender/" class="dropdown-item">Web para Vender</a>
+                    <a href="/soluciones/precio-de-una-pagina-web/" class="dropdown-item">Precio Página Web</a>
+                    <a href="/soluciones/publicidad-para-mi-negocio/" class="dropdown-item">Publicidad para Negocios</a>
+                    <a href="/soluciones/que-es-marketing-digital/" class="dropdown-item">¿Qué es Marketing Digital?</a>
+                    <a href="/soluciones/diseno-pagina-web-gratis/" class="dropdown-item">Diseño Web Gratis</a>
+                    <a href="/soluciones/publicidad-para-restaurantes/" class="dropdown-item">Publicidad Restaurantes</a>
+                    <a href="/soluciones/pagina-web-para-inmobiliarias/" class="dropdown-item">Web para Inmobiliarias</a>
+                    <a href="/soluciones/posicionamiento-web-seo-local/" class="dropdown-item">SEO Local</a>
                 </div>
             </div>
             
@@ -99,16 +99,16 @@
             Soluciones <span>▼</span>
         </div>
         <div class="mobile-dropdown-menu" id="soluciones-mobile">
-            <a href="/crear-pagina-web/" class="mobile-dropdown-item">Crear Página Web</a>
-            <a href="/crear-pagina-web-para-mi-negocio/" class="mobile-dropdown-item">Web para Mi Negocio</a>
-            <a href="/crear-pagina-web-para-vender/" class="mobile-dropdown-item">Web para Vender</a>
-            <a href="/precio-de-una-pagina-web/" class="mobile-dropdown-item">Precio Página Web</a>
-            <a href="/publicidad-para-mi-negocio/" class="mobile-dropdown-item">Publicidad para Negocios</a>
-            <a href="/que-es-marketing-digital/" class="mobile-dropdown-item">¿Qué es Marketing Digital?</a>
-            <a href="/diseno-pagina-web-gratis/" class="mobile-dropdown-item">Diseño Web Gratis</a>
-            <a href="/publicidad-para-restaurantes/" class="mobile-dropdown-item">Publicidad Restaurantes</a>
-            <a href="/pagina-web-para-inmobiliarias/" class="mobile-dropdown-item">Web para Inmobiliarias</a>
-            <a href="/posicionamiento-web-seo-local/" class="mobile-dropdown-item">SEO Local</a>
+            <a href="/soluciones/crear-pagina-web/" class="mobile-dropdown-item">Crear Página Web</a>
+            <a href="/soluciones/crear-pagina-web-para-mi-negocio/" class="mobile-dropdown-item">Web para Mi Negocio</a>
+            <a href="/soluciones/crear-pagina-web-para-vender/" class="mobile-dropdown-item">Web para Vender</a>
+            <a href="/soluciones/precio-de-una-pagina-web/" class="mobile-dropdown-item">Precio Página Web</a>
+            <a href="/soluciones/publicidad-para-mi-negocio/" class="mobile-dropdown-item">Publicidad para Negocios</a>
+            <a href="/soluciones/que-es-marketing-digital/" class="mobile-dropdown-item">¿Qué es Marketing Digital?</a>
+            <a href="/soluciones/diseno-pagina-web-gratis/" class="mobile-dropdown-item">Diseño Web Gratis</a>
+            <a href="/soluciones/publicidad-para-restaurantes/" class="mobile-dropdown-item">Publicidad Restaurantes</a>
+            <a href="/soluciones/pagina-web-para-inmobiliarias/" class="mobile-dropdown-item">Web para Inmobiliarias</a>
+            <a href="/soluciones/posicionamiento-web-seo-local/" class="mobile-dropdown-item">SEO Local</a>
         </div>
     </div>
     
@@ -127,16 +127,27 @@
 <div class="overlay" id="overlay"></div>
 
 <style>
-    /* ESTILOS DEL MENÚ RESPONSIVE */
+    /* ESTILOS DEL MENÚ RESPONSIVE (mejoras para evitar overflow y gaps laterales) */
+
+    /* Base: prevenir scroll horizontal en cualquier página que inyecte este menú */
+    html, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden; /* evita el espacio blanco lateral */
+        -webkit-font-smoothing: antialiased;
+    }
+
     .main-nav {
         background: #f8f9fa;
-        padding: 15px 0;
+        padding: 12px 0;
         position: sticky;
         top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        width: 100%;
     }
-    
+
     .nav-container {
         max-width: 1200px;
         margin: 0 auto;
@@ -144,243 +155,98 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        box-sizing: border-box;
     }
-    
+
     .logo {
         display: flex;
         align-items: center;
         text-decoration: none;
         color: #333;
-        z-index: 1002;
+        z-index: 1102;
     }
-    
+
     .logo-text {
         font-weight: bold;
         line-height: 1.2;
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
-    
+
     .logo-subtext {
         font-size: 0.8em;
         line-height: 1.2;
         color: #666;
     }
-    
+
     /* MENÚ DESKTOP */
     .desktop-menu {
         display: flex;
-        gap: 25px;
+        gap: 24px;
         align-items: center;
     }
-    
+
     @media (max-width: 992px) {
-        .desktop-menu {
-            display: none;
-        }
+        .desktop-menu { display: none; }
     }
-    
-    .nav-link {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
-    
-    .nav-link:hover {
-        color: #007bff;
-    }
-    
-    .nav-link.active {
-        color: #007bff;
-        font-weight: bold;
-    }
-    
+
+    .nav-link { text-decoration: none; color: #333; font-weight: 500; transition: color .2s ease; }
+    .nav-link:hover { color: #007bff; }
+    .nav-link.active { color: #007bff; font-weight: 700; }
+
     /* DROPDOWNS */
-    .dropdown {
-        position: relative;
-    }
-    
-    .dropdown-toggle {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-    
+    .dropdown { position: relative; }
+    .dropdown-toggle { display: flex; align-items: center; cursor: pointer; }
+
     .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        border-radius: 5px;
-        min-width: 280px;
-        padding: 10px 0;
-        display: none;
-        z-index: 1001;
+        position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        border-radius: 6px; min-width: 260px; padding: 8px 0; display: none; z-index: 1101; box-sizing: border-box;
     }
-    
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-    
-    .dropdown-item {
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        color: #333;
-        border-bottom: 1px solid #f0f0f0;
-        transition: background 0.3s;
-    }
-    
-    .dropdown-item:hover {
-        background: #f8f9fa;
-    }
-    
-    .dropdown-item:last-child {
-        border-bottom: none;
-    }
-    
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-item { display: block; padding: 9px 18px; text-decoration: none; color: #333; border-bottom: 1px solid #f0f0f0; transition: background .15s; }
+    .dropdown-item:hover { background: #f8f9fa; }
+    .dropdown-item:last-child { border-bottom: none; }
+
     /* BOTÓN WHATSAPP */
-    .whatsapp-btn {
-        background: #25D366;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        transition: background 0.3s;
-    }
-    
-    .whatsapp-btn:hover {
-        background: #128C7E;
-    }
-    
+    .whatsapp-btn { background: #25D366; color: #fff; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 700; display: flex; align-items: center; }
+    .whatsapp-btn:hover { background: #128C7E; }
+
     /* MENÚ HAMBURGUESA */
-    .mobile-menu-toggle {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 21px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1002;
-    }
-    
-    .mobile-menu-toggle span {
-        display: block;
-        height: 3px;
-        width: 100%;
-        background: #333;
-        border-radius: 3px;
-        transition: all 0.3s ease;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-    
-    @media (max-width: 992px) {
-        .mobile-menu-toggle {
-            display: flex;
-        }
-    }
-    
-    /* MENÚ MÓVIL */
+    .mobile-menu-toggle { display: none; flex-direction: column; justify-content: space-between; width: 30px; height: 21px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1102; }
+    .mobile-menu-toggle span { display: block; height: 3px; width: 100%; background: #333; border-radius: 3px; transition: transform .25s, opacity .25s; }
+    .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    @media (max-width: 992px) { .mobile-menu-toggle { display: flex; } }
+
+    /* MENÚ MÓVIL: en pantallas pequeñas ocupar todo el ancho (evita gaps) */
     .mobile-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 400px;
-        height: 100vh;
-        background: white;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        padding: 80px 20px 20px;
-        overflow-y: auto;
-        transition: right 0.3s ease;
-        z-index: 1001;
+        position: fixed; top: 0; right: -100%; width: 80%; max-width: 420px; height: 100vh; background: #fff; box-shadow: -6px 0 20px rgba(0,0,0,0.08);
+        padding: 78px 18px 18px; overflow-y: auto; transition: right .28s ease; z-index: 1101; box-sizing: border-box;
     }
-    
-    .mobile-menu.active {
-        right: 0;
+
+    /* En pantallas más pequeñas, usar el 100% para evitar que quede un hueco blanco */
+    @media (max-width: 420px) {
+        .mobile-menu { width: 100%; max-width: none; right: -100%; }
     }
-    
-    .mobile-nav-link {
-        display: block;
-        padding: 15px 0;
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    .mobile-dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 0;
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        border-bottom: 1px solid #f0f0f0;
-        cursor: pointer;
-    }
-    
-    .mobile-dropdown-menu {
-        display: none;
-        padding-left: 15px;
-    }
-    
-    .mobile-dropdown-menu.active {
-        display: block;
-    }
-    
-    .mobile-dropdown-item {
-        display: block;
-        padding: 12px 0;
-        text-decoration: none;
-        color: #666;
-        border-bottom: 1px solid #f8f8f8;
-    }
-    
-    .mobile-dropdown-item:last-child {
-        border-bottom: none;
-    }
-    
-    .mobile-whatsapp {
-        margin-top: 20px;
-        text-align: center;
-    }
-    
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-    }
-    
-    .overlay.active {
-        opacity: 1;
-        visibility: visible;
+
+    .mobile-menu.active { right: 0; }
+    .mobile-nav-link { display: block; padding: 14px 0; text-decoration: none; color: #333; font-weight: 600; border-bottom: 1px solid #f0f0f0; }
+    .mobile-dropdown-toggle { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; text-decoration: none; color: #333; font-weight: 600; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
+    .mobile-dropdown-menu { display: none; padding-left: 12px; }
+    .mobile-dropdown-menu.active { display: block; }
+    .mobile-dropdown-item { display: block; padding: 10px 0; text-decoration: none; color: #666; border-bottom: 1px solid #f8f8f8; }
+    .mobile-dropdown-item:last-child { border-bottom: none; }
+    .mobile-whatsapp { margin-top: 18px; text-align: center; }
+
+    /* Overlay */
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45); opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s; z-index: 1100; }
+    .overlay.active { opacity: 1; visibility: visible; }
+
+    /* Ajustes finos para evitar que el contenido quede pegado al borde en móviles */
+    @media (max-width: 420px) {
+        .nav-container { padding: 0 12px; }
+        .logo-text { font-size: 1rem; }
+        .whatsapp-btn { padding: 8px 12px; }
     }
 </style>
 
