@@ -1,0 +1,9 @@
+.plantillas { display:flex; gap: 1rem; }
+.plantilla button { margin-top: 0.5rem; padding: 0.5rem 1rem; cursor: pointer; }
+.plantilla h3 { margin: 0 0 0.5rem 0; }
+form input[type="text"], form input[type="url"], form input[type="email"], form input[type="tel"], form textarea, form input[type="color"] {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+form button { padding: 0.6rem 1rem; background: #0d6efd; color: #fff; border: none; cursor: pointer; }
