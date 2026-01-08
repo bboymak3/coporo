@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Crawlers específicos
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+
+# Bloquear duplicados (si no quieres /barinas/)
+Disallow: /barinas/
+
+# Sitemap
+Sitemap: https://coporo.pages.dev/sitemap.xml
+
+# Cloudflare Pages optimization
+Crawl-delay: 2
