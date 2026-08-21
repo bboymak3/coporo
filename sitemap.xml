@@ -11,6 +11,14 @@
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
+
+    <!-- Testimonios y reseñas -->
+    <url>
+        <loc>https://coporo.pages.dev/testimonios/</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
     
     <!-- Servicios -->
     <url>
@@ -169,6 +177,20 @@
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
+
+    <!-- Landings locales por capital de municipio de Barinas -->
+    <url><loc>https://coporo.pages.dev/barinas/sabaneta/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/el-canton/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/socopo/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/arismendi/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/barinas/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/barinitas/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/barrancas/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/santa-barbara/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/obispos/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/ciudad-bolivia/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/libertad/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+    <url><loc>https://coporo.pages.dev/barinas/ciudad-de-nutrias/</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
     
     <!-- Portafolio -->
     <url>

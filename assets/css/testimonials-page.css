@@ -1,0 +1,24 @@
+:root { --testimonials-ink: #1f3347; --testimonials-blue: #1769aa; --testimonials-orange: #f28c28; --testimonials-paper: #f5f8fb; }
+* { box-sizing: border-box; }
+body { background: var(--testimonials-paper); color: var(--testimonials-ink); font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; margin: 0; }
+a { color: var(--testimonials-blue); }
+.testimonials-header { background: #102a43; color: #fff; padding: 18px 5vw; }
+.testimonials-header-inner, .testimonials-wrap { margin: 0 auto; max-width: 1120px; width: 90%; }
+.testimonials-header a { color: #fff; text-decoration: none; }
+.testimonials-brand { font-size: 1.25rem; font-weight: 700; letter-spacing: .05em; }
+.testimonials-hero { background: linear-gradient(125deg, #102a43, #1769aa); color: #fff; padding: 88px 0 78px; }
+.testimonials-hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; margin: 0 0 18px; max-width: 800px; }
+.testimonials-hero p { font-size: 1.15rem; max-width: 700px; }
+.testimonials-button { background: var(--testimonials-orange); border-radius: 4px; color: #fff; display: inline-block; font-weight: 700; padding: 12px 18px; text-decoration: none; }
+.testimonials-button.secondary { background: #fff; color: var(--testimonials-blue); margin-left: 8px; }
+.testimonials-section { padding: 70px 0; }
+.testimonials-section h2 { font-size: clamp(1.8rem, 3vw, 3rem); margin-top: 0; }
+.testimonials-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+.testimonial-card { background: #fff; border: 1px solid #dfe7ee; border-top: 5px solid var(--testimonials-orange); padding: 25px; }
+.testimonial-card blockquote { margin: 0; }
+.testimonial-card cite { color: #52606d; display: block; font-style: normal; font-weight: 700; margin-top: 18px; }
+.testimonial-card cite::before { content: '— '; }
+.google-source { background: #fff; border-left: 4px solid var(--testimonials-blue); margin-top: 34px; padding: 22px 25px; }
+footer { background: #102a43; color: #fff; padding: 30px 0; }
+footer a { color: #ffcf8c; }
+@media (max-width: 760px) { .testimonials-grid { grid-template-columns: 1fr; } .testimonials-button.secondary { margin-left: 0; margin-top: 10px; } .testimonials-hero { padding: 62px 0; } }
