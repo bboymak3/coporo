@@ -1,6 +1,5 @@
 (function () {
   const profileUrl = 'https://www.google.com/maps/search/?api=1&query=360%20SOLUCIONES%20Calle%20Camejor%20Av.%20Montilla%20Barinas';
-  if (document.querySelector('.site-local-content')) return;
   const path = window.location.pathname.toLowerCase();
   const municipalityByPath = {
     '/barinas/arismendi/': 'Arismendi',
@@ -17,20 +16,25 @@
     '/barinas/socopo/': 'Socopó'
   };
   const municipality = municipalityByPath[path] || 'Barinas';
-  const style = document.createElement('link');
-  style.rel = 'stylesheet';
-  style.href = '/assets/css/site-local-content.css';
-  document.head.appendChild(style);
+  if (!document.querySelector('link[href="/assets/css/site-local-content.css"]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = '/assets/css/site-local-content.css';
+    document.head.appendChild(style);
+  }
 
-  const section = document.createElement('section');
-  section.className = 'site-local-content';
-  section.innerHTML = '<div class="site-local-content-inner">' +
-    '<h2>Diseño de páginas webs en ' + municipality + '</h2>' +
-    '<p>Creamos páginas web profesionales, rápidas y optimizadas para que los negocios de ' + municipality + ' sean encontrados y contacten con más clientes.</p>' +
-    '<div class="site-local-actions"><a class="site-google-button" href="' + profileUrl + '" target="_blank" rel="noopener">Ver perfil y reseñas en Google</a>' +
-    '<button class="site-testimonials-button" type="button" data-testimonials-open>Ver testimonios</button></div>' +
-    '</div>';
-  document.body.insertBefore(section, document.body.firstChild);
+  let section = document.querySelector('.site-local-content');
+  if (!section) {
+    section = document.createElement('section');
+    section.className = 'site-local-content';
+    section.innerHTML = '<div class="site-local-content-inner">' +
+      '<h2>Diseño de páginas webs en ' + municipality + '</h2>' +
+      '<p>Creamos páginas web profesionales, rápidas y optimizadas para que los negocios de ' + municipality + ' sean encontrados y contacten con más clientes.</p>' +
+      '<div class="site-local-actions"><a class="site-google-button" href="' + profileUrl + '" target="_blank" rel="noopener">Ver perfil y reseñas en Google</a>' +
+      '<button class="site-testimonials-button" type="button" data-testimonials-open>Ver testimonios</button></div>' +
+      '</div>';
+    document.body.insertBefore(section, document.body.firstChild);
+  }
 
   const modal = document.createElement('div');
   modal.className = 'testimonials-modal';
@@ -49,7 +53,9 @@
   document.body.appendChild(modal);
   const openModal = function () { modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); };
   const closeModal = function () { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); };
-  section.querySelector('[data-testimonials-open]').addEventListener('click', openModal);
+  section.querySelectorAll('[data-testimonials-open]').forEach(function (button) {
+    button.addEventListener('click', openModal);
+  });
   modal.querySelector('[data-testimonials-close]').addEventListener('click', closeModal);
   modal.addEventListener('click', function (event) { if (event.target === modal) closeModal(); });
   document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeModal(); });
