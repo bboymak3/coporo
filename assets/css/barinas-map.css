@@ -5,7 +5,7 @@
   align-items: stretch;
 }
 .barinas-map {
-  min-height: 520px;
+  height: 520px;
   border: 1px solid #dfe5eb;
   border-radius: 12px;
   overflow: hidden;
@@ -36,6 +36,6 @@
 .barinas-map-place span { color: #6c757d; font-size: .9rem; }
 @media (max-width: 767px) {
   .barinas-map-layout { grid-template-columns: 1fr; }
-  .barinas-map { min-height: 390px; }
+  .barinas-map { height: 390px; }
   .barinas-map-list { max-height: none; }
 }

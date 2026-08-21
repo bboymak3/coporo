@@ -41,4 +41,9 @@
     });
     listElement.appendChild(button);
   });
+
+  const refreshMapSize = function () { map.invalidateSize(); };
+  window.addEventListener('resize', refreshMapSize);
+  window.addEventListener('load', refreshMapSize);
+  setTimeout(refreshMapSize, 250);
 }());
