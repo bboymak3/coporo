@@ -446,6 +446,40 @@
 
     .float-wa { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; border-radius: 50%; background: var(--gradient-whatsapp); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 8px 28px rgba(37,211,102,0.45); transition: all 0.2s; }
     .float-wa:hover { transform: scale(1.08); color: #fff; }
+
+    /* === MODAL CLIENTE === */
+    .cliente-modal-overlay {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+      display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .cliente-modal-overlay.active { display: flex; }
+    .cliente-modal {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 36px 32px; max-width: 440px; width: 100%;
+      position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: scale(0.92) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .cliente-modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      color: var(--text-muted); font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .cliente-modal-close:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+    .cliente-modal-header { text-align: center; margin-bottom: 28px; }
+    .cliente-modal-emoji { font-size: 3.5rem; margin-bottom: 12px; }
+    .cliente-modal-header h3 { color: #fff; font-size: 1.3rem; margin-bottom: 8px; }
+    .cliente-modal-header p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 10px; }
+    .cliente-modal-country {
+      display: inline-block; padding: 4px 12px; border-radius: 999px;
+      background: rgba(0,188,212,0.12); color: var(--primary);
+      font-size: 0.78rem; font-weight: 700;
+    }
+    .cliente-modal-actions { display: flex; flex-direction: column; gap: 10px; }
     .float-yt { position: fixed; bottom: 24px; left: 24px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: var(--youtube); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 8px 24px rgba(255,0,0,0.4); transition: all 0.2s; }
     .float-yt:hover { transform: scale(1.08); color: #fff; }
 
@@ -1004,6 +1038,27 @@
 <a href="https://wa.me/584167775771?text=Hola%20Edward%2C%20vi%20la%20web%20de%20Soluciones%20360%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" class="float-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <a href="https://youtube.com/@makeseo" target="_blank" rel="noopener" class="float-yt" aria-label="YouTube @makeseo"><i class="fab fa-youtube"></i></a>
 
+<!-- Modal de cliente -->
+<div id="clienteModal" class="cliente-modal-overlay" onclick="if(event.target===this)closeClienteModal()">
+  <div class="cliente-modal">
+    <button class="cliente-modal-close" onclick="closeClienteModal()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+    <div class="cliente-modal-header">
+      <div id="cm-emoji" class="cliente-modal-emoji">📍</div>
+      <h3 id="cm-name">Nombre del negocio</h3>
+      <p id="cm-desc">Descripción del negocio</p>
+      <span id="cm-country" class="cliente-modal-country">VE</span>
+    </div>
+    <div class="cliente-modal-actions">
+      <a id="cm-google" href="#" target="_blank" rel="noopener" class="btn btn-primary-cta" style="width:100%; justify-content:center; padding:14px;">
+        <i class="fab fa-google"></i> Ir a perfil de Google
+      </a>
+      <button class="btn btn-outline-cyan" style="width:100%; justify-content:center; padding:14px; opacity:0.5; cursor:not-allowed;" disabled>
+        <i class="fas fa-globe"></i> Ir a página web (próximamente)
+      </button>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   // Mobile menu toggle
@@ -1026,51 +1081,71 @@
 
   // 31 clientes MML
   const clientes = [
-    {emoji:'💈', name:'KLEAR STUDIO', desc:'Top Barber Shop · Barbero a Domicilio', country:'VE', cat:'belleza', share:'https://share.google/u5uhajp7ysG70Bq6w'},
-    {emoji:'🚘', name:'OKINNOVATION PE', desc:'Fabricación & Accesorios Off-Road 4x4', country:'PE', cat:'automotriz', share:'https://share.google/d60jH6JP5PxiWAqId'},
-    {emoji:'🚙', name:'OKINNOVATION CL', desc:'Accesorios Off-Road · Santiago de Chile', country:'CL', cat:'automotriz', share:'https://share.google/BBRNKtZKRIDBgTzAI'},
-    {emoji:'⚙️', name:'CEMIVAZ', desc:'Diseño Mecánico, Fabricación y Mantenimiento Industrial', country:'VE', cat:'servicios', share:'https://share.google/eRgELPwSvISGWd9ZB'},
-    {emoji:'❄️', name:'Alexandro Refrigeration', desc:'HVACR Parts & Repair Services', country:'US', cat:'servicios', share:'https://share.google/WQLzrL87MGzTNMB4t'},
-    {emoji:'📍', name:'En Santiago', desc:'Directorio comercial · SEO · Diseño web', country:'CL', cat:'comercial', share:'https://share.google/2mOzXghFssRyQZYVa'},
-    {emoji:'🔧', name:'ELECTROMECANICO', desc:'Servicio a Domicilio en Santiago', country:'CL', cat:'automotriz', share:'https://share.google/V0zQRJoLFsdpRAF53'},
-    {emoji:'👕', name:'GRADO33', desc:'Tienda de Personalizados · Camisetas · Hoodies', country:'VE', cat:'comercial', share:'https://share.google/nQWDxX41oFLPqHRrd'},
-    {emoji:'🎨', name:'SAMSARA TATTOO STUDIO', desc:'Artista Corporal de Alto Nivel · Santiago CL', country:'CL', cat:'belleza', share:'https://share.google/t752PmcyBGKRilClj'},
-    {emoji:'🎯', name:'360 SOLUCIONES', desc:'Marketing Digital y Diseño Web · Barinas', country:'VE', cat:'servicios', share:'https://share.google/Q8hWPBpKy1LxzCiAa'},
-    {emoji:'🎨', name:'CHRISTIAN MOLINA', desc:'Agencia de Publicidad · Artes Gráficas · Barinas', country:'VE', cat:'servicios', share:'https://share.google/G0146W06Y693u2Yde'},
-    {emoji:'💅', name:'AMYSTUDIO', desc:'Uñas · Manicure · Pedicure · Masajes Terapéuticos', country:'VE', cat:'belleza', share:'https://share.google/v8ankSL3GUTIY9izs'},
-    {emoji:'🍽️', name:'LA CACHAMITA DE ORO', desc:'Restaurant · Comida Criolla · Cachama Frita', country:'VE', cat:'comida', share:'https://share.google/op6snKES6TrmypxE4'},
-    {emoji:'🚗', name:'LLANOCAR CL', desc:'Mecánico a Domicilio · Embragues · Tren Delantero', country:'CL', cat:'automotriz', share:'https://share.google/sucxSUn3fRya6ZmNs'},
-    {emoji:'📱', name:'HolaX Venezuela', desc:'Directorio de Negocios', country:'VE', cat:'comercial', share:'https://share.google/n9YadKi2RtI3QfiBn'},
-    {emoji:'🧹', name:'Limpieza a Domicilio 24/7', desc:'Limpieza en Santiago · Todo queda reluciente', country:'CL', cat:'servicios', share:'https://share.google/xbO4pTtwCjClt38XA'},
-    {emoji:'👕', name:'EMISOR', desc:'Global Solutions · Clothing Shops · Texas', country:'US', cat:'comercial', share:'https://share.google/HS2d43G9LksOezuBR'},
-    {emoji:'🤝', name:'La Conquista #1', desc:'Asociación Cooperativa', country:'VE', cat:'servicios', share:'https://share.google/kbobtwYucU3vbaslN'},
-    {emoji:'🧥', name:'Estilosgrado33', desc:'Buzos Personalizados · Serigrafía · DTF · Rionegro', country:'CO', cat:'comercial', share:'https://share.google/bFEPv74FsvmNgxt2R'},
-    {emoji:'🏠', name:'Alianza 58', desc:'Bienes Raices · Asesoría Inmobiliaria Integral', country:'VE', cat:'servicios', share:'https://share.google/p5u62sR3JfyXtH97J'},
-    {emoji:'🛠️', name:'CLARO SERVICIOS', desc:'Servicio Técnico · Hogar · Móvil · Rionegro', country:'CO', cat:'servicios', share:'https://share.google/h91rZJWb0s9FVtS0o'},
-    {emoji:'⚖️', name:'Abogados Valencia', desc:'Trámites de Notaría · Civil y Familia · Barinas', country:'VE', cat:'servicios', share:'https://share.google/cFiuM0YRfAtEpG7BE'},
-    {emoji:'🔧', name:'REGASA', desc:'Rectificadora de Cámaras y Culatas', country:'VE', cat:'automotriz', share:'https://share.google/H7gApIC14AQNacmEc'},
-    {emoji:'🎁', name:"JF GOD'S COMPANY", desc:'Personalizados · Arreglos · Poleras · Santiago', country:'CL', cat:'comercial', share:'https://share.google/lpbpPplVZu65yoxZb'},
-    {emoji:'🚙', name:'DR.AUTOMOTRIZ', desc:'Mecánico a Domicilio en Santiago · Frenos · Electricidad', country:'CL', cat:'automotriz', share:'https://share.google/6CFkPplosaNLfFkOX'},
-    {emoji:'🚘', name:'GLOBAL PRO Automotriz', desc:'Mecánico a Domicilio 24/7 · Motor · Frenos', country:'CL', cat:'automotriz', share:'https://share.google/zCexQKf5hvZVBMG92'},
-    {emoji:'📷', name:'MUNDONET', desc:'Cámaras de Seguridad y Desarrollo de Software', country:'VE', cat:'servicios', share:'https://share.google/G6AQc0w12UrtVpOVo'},
-    {emoji:'👁️', name:'Dubraskalash.art', desc:'Insumos para Pestañas TopLine · Speaker Internacional', country:'VE', cat:'belleza', share:'https://share.google/QZVACOSo7JTa55lOx'},
-    {emoji:'🚗', name:'Optimus Cars SPA', desc:'Car Wash Premium · Láminas de Seguridad Certificadas', country:'CL', cat:'automotriz', share:'https://share.google/7BhqsrZk1vLjJAVMR'},
-    {emoji:'🚘', name:'TAPIZADO DE VOLANTES', desc:'Tapizados Personalizados · Polerones · Santiago', country:'CL', cat:'automotriz', share:'https://share.google/1CXpOCbOR8eijO4Yb'},
-    {emoji:'🌳', name:'SOPREVER', desc:'Tala y poda de árboles · Santiago CL', country:'CL', cat:'servicios', share:'https://share.google/AfpzW5tvS7FOt4Ug2'}
+    {emoji:'💈', name:'KLEAR STUDIO', desc:'Top Barber Shop · Barbero a Domicilio', country:'VE', cat:'belleza', maps:'https://www.google.com/maps/search/%F0%9F%94%B4%F0%9F%94%B5%E2%9A%AA%20KLEAR%20STUDIO%20-Top%20Barber%20Shop-%20Barbero%20a%20Domicilio-'},
+    {emoji:'🚘', name:'OKINNOVATION PE', desc:'Fabricación & Accesorios Off-Road 4x4', country:'PE', cat:'automotriz', maps:'https://www.google.com/maps/search/%F0%9F%93%A3%20OKINNOVATION%20PE%F0%9F%9F%A2%20%5B%20%F0%9F%9A%98%20Fabricaci%C3%B3n%20%26%20Accesorios%20Off-Road%20%5D%20LLEVAMOS%20LA%20PERSONALIZACION%20A%20OTRO%20NIVEL%204X4%E2%9A%99%EF%B8%8F'},
+    {emoji:'🚙', name:'OKINNOVATION CL', desc:'Accesorios Off-Road · Santiago de Chile', country:'CL', cat:'automotriz', maps:'https://www.google.com/maps/search/%F0%9F%93%A3%20OKINNOVATION%20%F0%9F%9F%A2%20%5B%20%F0%9F%9A%98%20Fabricaci%C3%B3n%20%26%20Accesorios%20Off-Road%20%5D%20LLEVAMOS%20LA%20PERSONALIZACION%20A%20OTRO%20NIVEL%204X4%E2%9A%99%EF%B8%8F'},
+    {emoji:'⚙️', name:'CEMIVAZ', desc:'Diseño Mecánico, Fabricación y Mantenimiento Industrial', country:'VE', cat:'servicios', maps:'https://www.google.com/maps/search/CEMIVAZ%20%F0%9F%9F%A2%20Dise%C3%B1o%20Mec%C3%A1nico%2C%20Fabricaci%C3%B3n%20y%20Mantenimiento%20Industrial%20%F0%9F%92%AF'},
+    {emoji:'❄️', name:'Alexandro Refrigeration', desc:'HVACR Parts & Repair Services', country:'US', cat:'servicios', maps:'https://www.google.com/maps/search/Alexandro%20Refrigeration%20H.V.A.C.R.%20Parts%20%26%20Repair%20Services'},
+    {emoji:'📍', name:'En Santiago', desc:'Directorio comercial · SEO · Diseño web', country:'CL', cat:'comercial', maps:'https://www.google.com/maps/search/En%20Santiago%20%F0%9F%9F%A2%20Directorio%20comercial%20%7C%20Inscribe%20tu%20Negocio%20y%20Aparece%20en%20los%20Primeros%20Resultados%20-%20SEO'},
+    {emoji:'🔧', name:'ELECTROMECANICO', desc:'Servicio a Domicilio en Santiago', country:'CL', cat:'automotriz', maps:'https://www.google.com/maps/search/ELECTROMECANICO%20%E2%9A%A0%EF%B8%8F%20a%20Domicilio%20en%20santiago'},
+    {emoji:'👕', name:'GRADO33', desc:'Tienda de Personalizados · Camisetas · Hoodies', country:'VE', cat:'comercial', maps:'https://www.google.com/maps/search/GRADO33%20%7C%20%F0%9F%9F%A2%20TIENDA%20DE%20PERSONALIZADOS%20-%20CAMISETAS%20-%20HOODIES%20-%20RORULADOS%20-%20REGALOS%20-'},
+    {emoji:'🎨', name:'SAMSARA TATTOO STUDIO', desc:'Artista Corporal de Alto Nivel · Santiago CL', country:'CL', cat:'belleza', maps:'https://www.google.com/maps/search/SAMSARA%20TATTOO%20STUDIO%20%F0%9F%9F%A2%20%7C%20Artista%20Corporal%20de%20Alto%20Nivel%20%7C%20-%20dise%C3%B1o%20y%20elaboracion%20de%20artes%20visuales'},
+    {emoji:'🎯', name:'360 SOLUCIONES', desc:'Marketing Digital y Diseño Web · Barinas', country:'VE', cat:'servicios', maps:'https://www.google.com/maps/search/360%20SOLUCIONES%20%F0%9F%9F%A2%20Realizamos%20tus%20tr%C3%A1mites%20%E2%8F%B1%EF%B8%8F%20-%20Marketing%20Digital%20y%20dise%C3%B1o%20de%20paginas%20WEB%20En%20Barinas%20-'},
+    {emoji:'🎨', name:'CHRISTIAN MOLINA', desc:'Agencia de Publicidad · Artes Gráficas · Barinas', country:'VE', cat:'servicios', maps:'https://www.google.com/maps/search/CHRISTIAN%20MOLINA%20%F0%9F%9F%A2%20Agencia%20de%20Publicidad%20-%20Marketing%F0%9F%9F%A2%20%5B%20%F0%9F%A5%87%20EXPERTOS%20EN%20ARTES%20GRAFICAS%20EN%20BARINAS%20%F0%9F%93%A3%20%5D'},
+    {emoji:'💅', name:'AMYSTUDIO', desc:'Uñas · Manicure · Pedicure · Masajes Terapéuticos', country:'VE', cat:'belleza', maps:'https://www.google.com/maps/search/AMYSTUDIO%20%F0%9F%9F%A2%20U%C3%91AS%20%F0%9F%92%85%F0%9F%8F%BB%20-%20MANICURE%20-%20PEDICURE%20-%20MASAJES%20TERAPEUTICOS%20%F0%9F%92%86%E2%80%8D%E2%99%80%EF%B8%8F'},
+    {emoji:'🍽️', name:'LA CACHAMITA DE ORO', desc:'Restaurant · Comida Criolla · Cachama Frita', country:'VE', cat:'comida', maps:'https://www.google.com/maps/search/LA%20CACHAMITA%20DE%20ORO%20%F0%9F%A5%87RESTAURANT%20%F0%9F%9F%A2-%20COMIDA%20CRIOLLA%20-%20%F0%9F%94%A5%20CACHAMA%20FRITA%20-%20CARNE%20ASADA%20-%20MARISQUERIA-%F0%9F%8D%A4'},
+    {emoji:'🚗', name:'LLANOCAR CL', desc:'Mecánico a Domicilio · Embragues · Tren Delantero', country:'CL', cat:'automotriz', maps:'https://www.google.com/maps/search/LLANOCAR%20CL%20Mec%C3%A1nico%20a%20Domicilio%20-%F0%9F%9F%A2%20Mec%C3%A1nica%20Automotriz%20-%20Reparaciones%20%F0%9F%94%A7%20-%20Embragues%20y%20Distribuci%C3%B3n%2C%20Tren%20Delantero'},
+    {emoji:'📱', name:'HolaX Venezuela', desc:'Directorio de Negocios', country:'VE', cat:'comercial', maps:'https://www.google.com/maps/search/HolaX%20Venezuela%20%F0%9F%9F%A2%20Directorio%20de%20Negocios'},
+    {emoji:'🧹', name:'Limpieza a Domicilio 24/7', desc:'Limpieza en Santiago · Todo queda reluciente', country:'CL', cat:'servicios', maps:'https://www.google.com/maps/search/Limpieza%20a%20Domicilio%2024/7%20%F0%9F%9F%A2%20con%20Aspiradora%20a%20Vapor%20-%20Tapiceria%20de%20Autos%20-%20Alfombras%20-%20Cortinas%20-%20Sillones%20-%20Airbnb%20-'},
+    {emoji:'👕', name:'EMISOR', desc:'Global Solutions · Clothing Shops · Texas', country:'US', cat:'comercial', maps:'https://www.google.com/maps/search/EMISOR%20%F0%9F%92%A1%20%7C%20%F0%9F%9F%A2%20Global%20solutions%20for%20costumized%20you%20stuff%20-%20clotings%20shops%20and%20more.%20In%20texas'},
+    {emoji:'🤝', name:'La Conquista #1', desc:'Asociación Cooperativa', country:'VE', cat:'servicios', maps:'https://www.google.com/maps/search/La%20Conquista%20%231%20%F0%9F%9A%A7%20Asociacion%20Cooperativa%20%F0%9F%9F%A2'},
+    {emoji:'🧥', name:'Estilosgrado33', desc:'Buzos Personalizados · Serigrafía · DTF · Rionegro', country:'CO', cat:'comercial', maps:'https://www.google.com/maps/search/Tienda%20de%20Buzos%20Personalizados%2C%20-%20Estilosgrado33%20-%20Servicio%20de%20Estampados%20En%20en%20Rionegro%20-%20Camisetas%20-%20Serigraf%C3%ADa%20-DTF'},
+    {emoji:'🏠', name:'Alianza 58', desc:'Bienes Raices · Asesoría Inmobiliaria Integral', country:'VE', cat:'servicios', maps:'https://www.google.com/maps/search/Alianza%2058%20%2C%20%F0%9F%9F%A2%20Bienes%20raices%20Ca.%20-%20Brindamos%20asesor%C3%ADa%20inmobiliaria%20integral%20a%20nuestros%20clientes.'},
+    {emoji:'🛠️', name:'CLARO SERVICIOS', desc:'Servicio Técnico · Hogar · Móvil · Rionegro', country:'CO', cat:'servicios', maps:'https://www.google.com/maps/search/CLARO%20%F0%9F%94%B4%20SERVICIOS%20RIONEGRO%20-%20LA%20CEJA%20-%20%F0%9F%92%AF-%20EL%20CARMEN%20DE%20V%C3%8DBORAL-%20G33%20%F0%9F%8F%85%20SERVICIO%20T%C3%89CNICO%20-%20HOGAR%20-%20MOBIL'},
+    {emoji:'⚖️', name:'Abogados Valencia', desc:'Trámites de Notaría · Civil y Familia · Barinas', country:'VE', cat:'servicios', maps:'https://www.google.com/maps/search/Abogados%20Valencia%20%E2%9A%96%EF%B8%8F%20%7C%20%F0%9F%9F%A2%20Tr%C3%A1mites%20de%20Notar%C3%ADa%20y%20Registro%20en%20Barinas%20-%20Civil%20y%20Familia'},
+    {emoji:'🔧', name:'REGASA', desc:'Rectificadora de Cámaras y Culatas', country:'VE', cat:'automotriz', maps:'https://www.google.com/maps/search/REGASA%20%F0%9F%9F%A2%20%F0%9F%94%A7%20%7C%20RECTIFICADORA%20DE%20CAMARAS%20O%20CULATAS%20%F0%9F%9A%97%F0%9F%9A%9B%F0%9F%9A%9C%20Tu%20motor%20en%20las%20MEJORES%20MANOS%20%F0%9F%A4%B2%F0%9F%92%AF'},
+    {emoji:'🎁', name:"JF GOD'S COMPANY", desc:'Personalizados · Arreglos · Poleras · Santiago', country:'CL', cat:'comercial', maps:'https://www.google.com/maps/search/Polerones%20Personalizados%20%F0%9F%9F%A2%20-%20POLERAS%20Estampados%20Para%20Hombre%20y%20Mujer%20En%20Santiago'},
+    {emoji:'🚙', name:'DR.AUTOMOTRIZ', desc:'Mecánico a Domicilio en Santiago · Frenos · Electricidad', country:'CL', cat:'automotriz', maps:'https://www.google.com/maps/search/DR.AUTOMOTRIZ%20-%20Mecanico%20a%20Domicilio%20en%20Santiago'},
+    {emoji:'🚘', name:'GLOBAL PRO Automotriz', desc:'Mecánico a Domicilio 24/7 · Motor · Frenos', country:'CL', cat:'automotriz', maps:'https://www.google.com/maps/search/MEC%C3%81NICO%20A%20DOMICILIO%2024/7%20%F0%9F%94%A7%20%F0%9F%A7%91%E2%80%8D%F0%9F%94%A7%20%7C%20GLOBAL%20PRO%20Automotriz%20%F0%9F%9A%97%20Especialistas%20en%20Motor%20Frenos%20y%20Electricidad%20de%20su%20veh%C3%ADculo%20en'},
+    {emoji:'📷', name:'MUNDONET', desc:'Cámaras de Seguridad y Desarrollo de Software', country:'VE', cat:'servicios', maps:'https://www.google.com/maps/search/MUNDONET%20%F0%9F%9F%A2%20C%C3%A1maras%20de%20Seguridad%20y%20Desarrollo%20de%20Software'},
+    {emoji:'👁️', name:'Dubraskalash.art', desc:'Insumos para Pestañas TopLine · Speaker Internacional', country:'VE', cat:'belleza', maps:'https://www.google.com/maps/search/Dubraskalash.art%20%E2%9C%A8%20%5BInsumos%20para%20Pesta%C3%B1as%20TopLine%5D%20%F0%9F%8F%86%20Speaker%20y%20Judge%20Internacional'},
+    {emoji:'🚗', name:'Optimus Cars SPA', desc:'Car Wash Premium · Láminas de Seguridad Certificadas', country:'CL', cat:'automotriz', maps:'https://www.google.com/maps/search/Optimus%20Cars%20SPA'},
+    {emoji:'🚘', name:'TAPIZADO DE VOLANTES', desc:'Tapizados Personalizados · Polerones · Santiago', country:'CL', cat:'automotriz', maps:'https://www.google.com/maps/search/Polerones%20Personalizados%20%F0%9F%9F%A2%20-%20POLERAS%20Estampados%20Para%20Hombre%20y%20Mujer%20En%20Santiago'},
+    {emoji:'🌳', name:'SOPREVER', desc:'Tala y poda de árboles · Santiago CL', country:'CL', cat:'servicios', maps:'https://www.google.com/maps/search/SOPREVER%20Soluciones%20y%20Prevenciones%20Verdes%20Tala%20y%20poda%20de%20%C3%A1rboles%20Santiago%20CL'}
   ];
 
   function renderClientes(filter='all') {
     const grid = document.getElementById('clientesGrid');
     const filtered = filter === 'all' ? clientes : clientes.filter(c => c.cat === filter);
-    grid.innerHTML = filtered.map(c => `
-      <a href="${c.share}" target="_blank" rel="noopener" class="cliente-card" data-cat="${c.cat}">
+    grid.innerHTML = filtered.map((c, i) => `
+      <div class="cliente-card" data-cat="${c.cat}" onclick="openClienteModal(${clientes.indexOf(c)})">
         <div class="cliente-emoji">${c.emoji}</div>
         <h4>${c.name}</h4>
         <p>${c.desc}</p>
         <span class="cliente-country">${c.country}</span>
-      </a>
+      </div>
     `).join('');
   }
+
+  function openClienteModal(idx) {
+    const c = clientes[idx];
+    const modal = document.getElementById('clienteModal');
+    document.getElementById('cm-emoji').textContent = c.emoji;
+    document.getElementById('cm-name').textContent = c.name;
+    document.getElementById('cm-desc').textContent = c.desc;
+    document.getElementById('cm-country').textContent = c.country;
+    document.getElementById('cm-google').href = c.maps;
+    modal.classList.add('active');
+  }
+
+  function closeClienteModal() {
+    document.getElementById('clienteModal').classList.remove('active');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeClienteModal();
+  });
+
   renderClientes();
 
   document.querySelectorAll('.filter-btn').forEach(btn => {
