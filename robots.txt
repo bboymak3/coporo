@@ -1,30 +1,39 @@
+# robots.txt - Soluciones 360 · Agencia de Edward Valencia @makeseo
+# https://soluciones360.makeseo.app
+
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /wp-login.php
-Disallow: /private/
-Disallow: /cgi-bin/
+Disallow: /frontend/
+Disallow: /project.mobirise
+Disallow: /tmp_remote.html
+Disallow: /menu.html
+Disallow: /_redirects.txt
 
-# Crawlers específicos
-User-agent: Googlebot
+# Crawlers de IA permitidos
+User-agent: GPTBot
 Allow: /
-Disallow: /admin/
 
-User-agent: Bingbot
+User-agent: ChatGPT-User
 Allow: /
-Disallow: /admin/
 
-User-agent: Yandex
+User-agent: Google-Extended
 Allow: /
-Disallow: /admin/
 
-# Bloquear duplicados (si no quieres /barinas/)
-Disallow: /barinas/
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 # Sitemap
 Sitemap: https://soluciones360.makeseo.app/sitemap.xml
 
-# Cloudflare Pages optimization
-Crawl-delay: 2
+# Crawl-delay
+Crawl-delay: 1
