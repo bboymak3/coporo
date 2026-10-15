@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="es-VE">
 <head>
+<!-- REDIRECT 301: dominio viejo -> nuevo -->
+<script>
+(function(){
+  var h = window.location.hostname.toLowerCase();
+  var p = window.location.pathname;
+  var s = window.location.search;
+  var old = 'coporo.pages.dev';
+  var nue = 'soluciones360.makeseo.app';
+  if (h === old || h === 'www.' + old || h.endsWith('.pages.dev') && h === old) {
+    window.location.replace('https://' + nue + p + s);
+  }
+})();
+</script>
+
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fe7e643ec4ca46ce84ca24774cec5f7f"}'></script><!-- End Cloudflare Web Analytics -->
 

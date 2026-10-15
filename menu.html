@@ -1,3 +1,17 @@
+
+<!-- REDIRECT 301: dominio viejo -> nuevo -->
+<script>
+(function(){
+  var h = window.location.hostname.toLowerCase();
+  var p = window.location.pathname;
+  var s = window.location.search;
+  var old = 'coporo.pages.dev';
+  var nue = 'soluciones360.makeseo.app';
+  if (h === old || h === 'www.' + old || h.endsWith('.pages.dev') && h === old) {
+    window.location.replace('https://' + nue + p + s);
+  }
+})();
+</script>
 <!-- menu.html -->
 <nav class="main-nav">
     <div class="nav-container">
