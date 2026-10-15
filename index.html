@@ -417,6 +417,22 @@
     .legal-card h3 { color: #fff; font-size: 1.1rem; margin-bottom: 10px; }
     .legal-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
 
+    /* === ZONAS DE BARINAS === */
+    .zonas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .zona-card {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 18px; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: 14px;
+      transition: all 0.2s; color: var(--text); text-decoration: none;
+    }
+    .zona-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 12px 24px rgba(0,0,0,0.25); color: var(--text); }
+    .zona-emoji { font-size: 1.6rem; flex-shrink: 0; }
+    .zona-card strong { display: block; color: #fff; font-size: 0.95rem; font-weight: 700; }
+    .zona-card small { display: block; color: var(--text-muted); font-size: 0.75rem; margin-top: 2px; }
+    .zona-destacada { border-color: var(--primary); background: rgba(0,188,212,0.08); }
+    .zona-nueva { border-color: var(--accent); background: rgba(255,107,0,0.06); }
+    .zona-nueva strong { color: var(--accent); }
+
     /* === FOOTER === */
     footer { background: #050810; padding: 60px 0 30px; border-top: 1px solid var(--border); }
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; gap: 32px; margin-bottom: 40px; }
@@ -527,6 +543,11 @@
           <li><a href="/barinas/libertad/">Libertad</a></li>
           <li><a href="/barinas/ciudad-de-nutrias/">Ciudad de Nutrias</a></li>
           <li><a href="/barinas/el-canton/">El Cantón</a></li>
+          <li style="border-top:1px solid var(--border); margin-top:6px; padding-top:6px;"><a href="/barinas/alto-barinas/" style="color:var(--accent); font-weight:700;">📍 Alto Barinas</a></li>
+          <li><a href="/barinas/santa-lucia/">Santa Lucía</a></li>
+          <li><a href="/barinas/santa-rosa/">Santa Rosa</a></li>
+          <li><a href="/barinas/la-luz/">La Luz</a></li>
+          <li><a href="/barinas/san-silvestre/">San Silvestre</a></li>
         </ul>
       </li>
       <li><a href="#legal">Trámites Legales</a></li>
@@ -936,6 +957,39 @@
   </div>
 </section>
 
+<!-- =================== ZONAS DE BARINAS =================== -->
+<section id="barinas" style="background: var(--bg);">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Cobertura total · Barinas, Venezuela</span>
+      <h2>Zonas de Barinas donde trabajamos</h2>
+      <p>Cobertura completa del estado Barinas: 12 municipios + 5 parroquias clave. Si tu negocio está en cualquiera de estas zonas, tenemos una landing SEO local lista para posicionarlo en Google Maps.</p>
+    </div>
+    <div class="zonas-grid">
+      <a href="/barinas/barinas/" class="zona-card zona-destacada"><span class="zona-emoji">📍</span><div><strong>Barinas</strong><small>Capital · Mun. Barinas</small></div></a>
+      <a href="/barinas/sabaneta/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Sabaneta</strong><small>Mun. Alberto Arvelo Torrealba</small></div></a>
+      <a href="/barinas/socopo/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Socopó</strong><small>Mun. Antonio José de Sucre</small></div></a>
+      <a href="/barinas/arismendi/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Arismendi</strong><small>Mun. Arismendi</small></div></a>
+      <a href="/barinas/barinitas/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Barinitas</strong><small>Mun. Bolívar</small></div></a>
+      <a href="/barinas/barrancas/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Barrancas</strong><small>Mun. Cruz Paredes</small></div></a>
+      <a href="/barinas/santa-barbara/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Santa Bárbara</strong><small>Mun. Ezequiel Zamora</small></div></a>
+      <a href="/barinas/obispos/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Obispos</strong><small>Mun. Obispos</small></div></a>
+      <a href="/barinas/ciudad-bolivia/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Ciudad Bolivia</strong><small>Mun. Pedraza</small></div></a>
+      <a href="/barinas/libertad/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Libertad</strong><small>Mun. Rojas</small></div></a>
+      <a href="/barinas/ciudad-de-nutrias/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>Ciudad de Nutrias</strong><small>Mun. Sosa</small></div></a>
+      <a href="/barinas/el-canton/" class="zona-card"><span class="zona-emoji">🏘️</span><div><strong>El Cantón</strong><small>Mun. Andrés Eloy Blanco</small></div></a>
+      <a href="/barinas/alto-barinas/" class="zona-card zona-nueva"><span class="zona-emoji">🆕</span><div><strong>Alto Barinas</strong><small>Parroquia · Mun. Barinas</small></div></a>
+      <a href="/barinas/santa-lucia/" class="zona-card zona-nueva"><span class="zona-emoji">🆕</span><div><strong>Santa Lucía</strong><small>Parroquia · Mun. Barinas</small></div></a>
+      <a href="/barinas/santa-rosa/" class="zona-card zona-nueva"><span class="zona-emoji">🆕</span><div><strong>Santa Rosa</strong><small>Parroquia · Mun. Barinas</small></div></a>
+      <a href="/barinas/la-luz/" class="zona-card zona-nueva"><span class="zona-emoji">🆕</span><div><strong>La Luz</strong><small>Parroquia · Mun. Obispos</small></div></a>
+      <a href="/barinas/san-silvestre/" class="zona-card zona-nueva"><span class="zona-emoji">🆕</span><div><strong>San Silvestre</strong><small>Parroquia · Mun. Barinas</small></div></a>
+    </div>
+    <div class="text-center mt-5">
+      <a href="https://wa.me/584167775771?text=Hola%2C%20mi%20negocio%20est%C3%A1%20en%20una%20zona%20de%20Barinas%20y%20quiero%20posicionarlo%20en%20Google%20Maps" target="_blank" rel="noopener" class="btn btn-primary-cta"><i class="fab fa-whatsapp"></i> Mi zona no aparece — consultar</a>
+    </div>
+  </div>
+</section>
+
 <!-- =================== CTA FINAL =================== -->
 <section id="contacto" class="cta-final">
   <div class="container">
@@ -991,7 +1045,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Municipios de Barinas</h5>
+        <h5>Municipios y Zonas de Barinas</h5>
         <ul>
           <li><a href="/barinas/barinas/">📍 Barinas (Capital)</a></li>
           <li><a href="/barinas/sabaneta/">Sabaneta</a></li>
@@ -1005,6 +1059,11 @@
           <li><a href="/barinas/libertad/">Libertad</a></li>
           <li><a href="/barinas/ciudad-de-nutrias/">Ciudad de Nutrias</a></li>
           <li><a href="/barinas/el-canton/">El Cantón</a></li>
+          <li><a href="/barinas/alto-barinas/" style="color:var(--accent);">📍 Alto Barinas</a></li>
+          <li><a href="/barinas/santa-lucia/">Santa Lucía</a></li>
+          <li><a href="/barinas/santa-rosa/">Santa Rosa</a></li>
+          <li><a href="/barinas/la-luz/">La Luz</a></li>
+          <li><a href="/barinas/san-silvestre/">San Silvestre</a></li>
         </ul>
       </div>
     </div>
