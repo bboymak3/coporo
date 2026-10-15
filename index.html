@@ -72,7 +72,7 @@
     },
     "foundingDate": "2020",
     "telephone": "+584167775771",
-    "email": "info@grado33marketing.com",
+    "email": "Correo36000@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Calle Camejor, Av. Montilla",
@@ -214,6 +214,28 @@
     .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; }
     .nav-links a { color: var(--text-muted); font-size: 0.93rem; font-weight: 500; }
     .nav-links a:hover { color: #fff; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after { content: ' ▾'; font-size: 0.7em; opacity: 0.7; }
+    .dropdown-menu-custom {
+      position: absolute; top: 100%; left: 0;
+      background: var(--bg-alt); border: 1px solid var(--border);
+      border-radius: 14px; padding: 8px; min-width: 220px;
+      list-style: none; margin: 4px 0 0;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: all 0.2s; z-index: 1100;
+      columns: 1; max-height: 480px; overflow-y: auto;
+    }
+    .nav-dropdown:hover .dropdown-menu-custom,
+    .nav-dropdown:focus-within .dropdown-menu-custom {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown-menu-custom li { margin: 0; }
+    .dropdown-menu-custom a {
+      display: block; padding: 8px 12px; border-radius: 8px;
+      color: var(--text-muted); font-size: 0.85rem; font-weight: 500;
+    }
+    .dropdown-menu-custom a:hover { background: rgba(0,188,212,0.12); color: var(--primary); }
     .nav-cta-group { display: flex; gap: 10px; align-items: center; }
     .btn { padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: none; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: inherit; }
     .btn-primary-cta { background: var(--gradient-cta); color: #fff; box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3); }
@@ -395,9 +417,19 @@
     .faq-a ul li { margin-bottom: 6px; }
     .faq-a strong { color: #fff; }
 
+    /* === TRÁMITES LEGALES === */
+    .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .legal-card { padding: 28px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; transition: all 0.3s; position: relative; overflow: hidden; }
+    .legal-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .legal-card:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .legal-card:hover::before { transform: scaleX(1); }
+    .legal-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(0,188,212,0.12); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; }
+    .legal-card h3 { color: #fff; font-size: 1.1rem; margin-bottom: 10px; }
+    .legal-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+
     /* === FOOTER === */
     footer { background: #050810; padding: 60px 0 30px; border-top: 1px solid var(--border); }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; gap: 32px; margin-bottom: 40px; }
     .footer-brand h4 { color: #fff; font-size: 1.15rem; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
     .footer-brand p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px; }
     .footer-col h5 { color: #fff; font-size: 0.85rem; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
@@ -456,7 +488,26 @@
       <li><a href="#youtube">YouTube</a></li>
       <li><a href="#clientes">Clientes</a></li>
       <li><a href="#precios">Precios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li class="nav-dropdown">
+        <a href="#barinas">Barinas ▾</a>
+        <ul class="dropdown-menu-custom">
+          <li><a href="/barinas/barinas/">📍 Barinas (Capital)</a></li>
+          <li><a href="/barinas/sabaneta/">Sabaneta</a></li>
+          <li><a href="/barinas/socopo/">Socopó</a></li>
+          <li><a href="/barinas/arismendi/">Arismendi</a></li>
+          <li><a href="/barinas/barinitas/">Barinitas</a></li>
+          <li><a href="/barinas/barrancas/">Barrancas</a></li>
+          <li><a href="/barinas/santa-barbara/">Santa Bárbara</a></li>
+          <li><a href="/barinas/obispos/">Obispos</a></li>
+          <li><a href="/barinas/ciudad-bolivia/">Ciudad Bolivia</a></li>
+          <li><a href="/barinas/libertad/">Libertad</a></li>
+          <li><a href="/barinas/ciudad-de-nutrias/">Ciudad de Nutrias</a></li>
+          <li><a href="/barinas/el-canton/">El Cantón</a></li>
+        </ul>
+      </li>
+      <li><a href="#legal">Trámites Legales</a></li>
+      <li><a href="/quienes-somos/">Quiénes Somos</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
     </ul>
     <div class="nav-cta-group">
       <a href="https://makeseo.app/academia/login.html" target="_blank" rel="noopener" class="btn btn-outline-cyan"><i class="fas fa-graduation-cap"></i> Academia</a>
@@ -471,9 +522,9 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-badge"><span class="dot"></span> AGENCIA · BOTS IA · ACADEMIA · SEO LOCAL</div>
-        <h1>Soluciones <span class="grad">360</span> para tu negocio<br>con <span class="accent">IA</span>, <span class="accent">SEO Local</span> y <span class="accent">web serverless</span></h1>
-        <p class="lead">Agencia de <strong style="color:#fff">Edward Valencia (@makeseo)</strong> — creador del <strong style="color:#fff">Método Malla Local (MML)</strong>. Diseño web a $0 de hosting, bots IA en WhatsApp 24/7, SEO Local en Google Maps y la <strong style="color:#fff">MakeSEO Academy</strong> para formar Agentes Digitales. Atendemos negocios en <strong style="color:#fff">Venezuela, Chile, Perú, Colombia y EE.UU.</strong></p>
+        <div class="hero-badge"><span class="dot"></span> AGENCIA EN BARINAS, VENEZUELA · BOTS IA · ACADEMIA · SEO LOCAL</div>
+        <h1>Soluciones <span class="grad">360</span> en Barinas<br>con <span class="accent">IA</span>, <span class="accent">SEO Local</span> y <span class="accent">web serverless</span></h1>
+        <p class="lead">Agencia de <strong style="color:#fff">Edward Valencia (@makeseo)</strong> — creador del <strong style="color:#fff">Método Malla Local (MML)</strong>. Desde <strong style="color:#fff">Barinas, Venezuela</strong> atendemos toda Latam: diseño web a $0 de hosting, bots IA en WhatsApp 24/7, SEO Local en Google Maps y la <strong style="color:#fff">MakeSEO Academy</strong>. Cobertura en <strong style="color:#fff">Barinas, Maracay, Valencia, Caracas, Socopó</strong> y clientes en Venezuela, Chile, Perú, Colombia y EE.UU.</p>
         <div class="hero-cta">
           <a href="https://wa.me/584167775771?text=Hola%20Edward%2C%20quiero%20una%20consultor%C3%ADa%20gratis" target="_blank" rel="noopener" class="btn btn-primary-cta"><i class="fab fa-whatsapp"></i> Consultoría gratis</a>
           <a href="https://youtube.com/@makeseo?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-youtube"><i class="fab fa-youtube"></i> Ver canal @makeseo</a>
@@ -680,14 +731,14 @@
 <section id="precios">
   <div class="container">
     <div class="section-head">
-      <span class="section-tag orange">Paquetes de Diseño Web</span>
+      <span class="section-tag orange">Paquetes de Diseño Web en Barinas</span>
       <h2>¿Cuánto cuesta un diseño de página web?</h2>
-      <p>Contamos con distintos paquetes de diseño web a medida. Proponemos ideas frescas e innovadoras. Todos incluyen hosting $0/mes en Cloudflare Pages, SSL automático y CDN global. Pago único, sin permanencia.</p>
+      <p>Contamos con distintos paquetes de diseño web a medida en Barinas, Venezuela. Proponemos ideas frescas e innovadoras. Todos incluyen hosting $0/mes en Cloudflare Pages, SSL automático y CDN global. Pago único, sin permanencia. <strong style="color:var(--accent)">Precios desde $150</strong>.</p>
     </div>
     <div class="precios-grid">
       <div class="precio-card">
         <h3>Paquete Empresa</h3>
-        <div class="precio-val">$497<small> / pago único</small></div>
+        <div class="precio-val">Desde $150<small> / pago único</small></div>
         <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 18px;">Diseño de página web profesional, apto para un comienzo en Internet. Sitio responsivo, contenido de calidad y fácil administración.</p>
         <ul class="precio-features">
           <li>Hasta 10 páginas</li>
@@ -700,12 +751,12 @@
           <li>E-mail personalizado</li>
           <li>Listo en dos semanas</li>
         </ul>
-        <a href="https://wa.me/584167775771?text=Quiero%20el%20Paquete%20Empresa%20de%20%24497" target="_blank" rel="noopener" class="precio-btn outline">Ver detalles Paquete Empresa</a>
+        <a href="https://wa.me/584167775771?text=Quiero%20el%20Paquete%20Empresa%20desde%20%24150" target="_blank" rel="noopener" class="precio-btn outline">Ver detalles Paquete Empresa</a>
       </div>
       <div class="precio-card featured">
         <span class="precio-tag">⭐ MÁS POPULAR</span>
         <h3>Paquete Corporativo</h3>
-        <div class="precio-val">$897<small> / pago único</small></div>
+        <div class="precio-val">Desde $150<small> / pago único</small></div>
         <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 18px;">Para negocios que ya tienen tracción y necesitan una web premium con SEO Local MML, bot IA y landings por comuna.</p>
         <ul class="precio-features">
           <li>Hasta 25 páginas + landings por comuna</li>
@@ -721,11 +772,11 @@
           <li>Soporte prioritario 30 días</li>
           <li>Listo en tres semanas</li>
         </ul>
-        <a href="https://wa.me/584167775771?text=Quiero%20el%20Paquete%20Corporativo%20de%20%24897" target="_blank" rel="noopener" class="precio-btn primary">Elegir Corporativo</a>
+        <a href="https://wa.me/584167775771?text=Quiero%20el%20Paquete%20Corporativo%20desde%20%24150" target="_blank" rel="noopener" class="precio-btn primary">Elegir Corporativo</a>
       </div>
       <div class="precio-card">
         <h3>Paquete E-commerce</h3>
-        <div class="precio-val">$1,297<small> / pago único</small></div>
+        <div class="precio-val">Desde $150<small> / pago único</small></div>
         <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 18px;">Tienda online completa con carrito, checkout, panel admin y bot IA para tomar pedidos en WhatsApp 24/7.</p>
         <ul class="precio-features">
           <li>Tienda online completa</li>
@@ -741,7 +792,7 @@
           <li>Soporte prioritario 60 días</li>
           <li>Listo en cuatro semanas</li>
         </ul>
-        <a href="https://wa.me/584167775771?text=Quiero%20el%20Paquete%20E-commerce%20de%20%241297" target="_blank" rel="noopener" class="precio-btn outline">Ver detalles Paquete E-commerce</a>
+        <a href="https://wa.me/584167775771?text=Quiero%20el%20Paquete%20E-commerce%20desde%20%24150" target="_blank" rel="noopener" class="precio-btn outline">Ver detalles Paquete E-commerce</a>
       </div>
     </div>
     <p class="text-center mt-4" style="color: var(--text-dim); font-size: 0.85rem;">Todos los paquetes incluyen hosting $0/mes en Cloudflare Pages · SSL automático · Sin permanencia · Pago único</p>
@@ -804,7 +855,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q"><i class="fas fa-plus"></i> ¿Cuánto cuesta un diseño de página web en Barinas?</button>
-        <div class="faq-a"><p>Los precios de los servicios de diseño web en Barinas varían según el tipo de sitio web, las características y la complejidad. En Soluciones 360 ofrecemos <strong style="color:#fff">3 paquetes transparentes</strong>: Empresa ($497), Corporativo ($897) y E-commerce ($1,297), todos con pago único y hosting incluido.</p><p>Nuestros precios se basan en: tipo de sitio web, características y complejidad. Para obtener un presupuesto personalizado, contáctanos por WhatsApp y te respondemos en menos de 1 hora.</p></div>
+        <div class="faq-a"><p>Los precios de los servicios de diseño web en Barinas varían según el tipo de sitio web, las características y la complejidad. En Soluciones 360 ofrecemos <strong style="color:#fff">3 paquetes transparentes</strong> con precios <strong style="color:#fff">desde $150</strong>: Empresa, Corporativo y E-commerce, todos con pago único y hosting incluido.</p><p>Nuestros precios se basan en: tipo de sitio web, características y complejidad. Para obtener un presupuesto personalizado, contáctanos por WhatsApp y te respondemos en menos de 1 hora.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q"><i class="fas fa-plus"></i> ¿Por qué necesito un diseño de página web en Barinas?</button>
@@ -830,6 +881,42 @@
         <button class="faq-q"><i class="fas fa-plus"></i> ¿Puedo crear mi propio paquete de desarrollo web?</button>
         <div class="faq-a"><p>Sí, puedes crear tu propio paquete a medida. Contáctanos por WhatsApp con tus requerimientos específicos y te enviamos una propuesta personalizada. Combinamos servicios de diseño web, SEO Local, bots IA, publicidad y diseño gráfico según las necesidades de tu negocio.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TRÁMITES LEGALES =================== -->
+<section id="legal" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Respaldo Legal · Barinas</span>
+      <h2>Soluciones 360: Legalidad y tecnología en un solo lugar</h2>
+      <p>No somos solo un diseño web. Somos tu socio 360°. Vinculación directa con <strong style="color:#fff">Abogados Valencia en Barinas</strong> para tus trámites legales y SAREN. Cobertura total: legal, técnica y creativa. No dejamos nada al azar.</p>
+    </div>
+    <div class="legal-grid">
+      <div class="legal-card">
+        <div class="legal-icon"><i class="fas fa-balance-scale"></i></div>
+        <h3>Respaldo Legal Real</h3>
+        <p>Vinculación con <strong style="color:#fff">Abogados Valencia en Barinas</strong> para tus trámites legales y SAREN. Redacción de documentos, notaría, registro civil y más.</p>
+      </div>
+      <div class="legal-card">
+        <div class="legal-icon"><i class="fas fa-file-signature"></i></div>
+        <h3>Documentos Legales</h3>
+        <p>Redacción de contratos, poderes, declaraciones, cartas de trabajo y todo tipo de documentos legales con la responsabilidad que nos caracteriza.</p>
+      </div>
+      <div class="legal-card">
+        <div class="legal-icon"><i class="fas fa-building"></i></div>
+        <h3>Trámites SAREN</h3>
+        <p>Registro de comercios, modificaciones estatutarias, poderes notariales y trámites ante el <strong style="color:#fff">SAREN</strong> en Barinas. Te acompañamos en todo el proceso.</p>
+      </div>
+      <div class="legal-card">
+        <div class="legal-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Socio 360°</h3>
+        <p>No somos solo un diseño, somos tu socio 360°. Legalidad, tecnología y estrategia en un solo lugar. Desde Barinas para toda Venezuela y Latam.</p>
+      </div>
+    </div>
+    <div class="legal-cta text-center mt-5">
+      <a href="https://wa.me/584167775771?text=Hola%2C%20necesito%20asesor%C3%ADa%20legal%20y%20tr%C3%A1mites%20SAREN%20en%20Barinas" target="_blank" rel="noopener" class="btn btn-primary-cta"><i class="fab fa-whatsapp"></i> Consultar trámites legales</a>
     </div>
   </div>
 </section>
@@ -884,9 +971,27 @@
         <ul>
           <li><i class="fas fa-map-marker-alt"></i> Barinas, Venezuela</li>
           <li><i class="fas fa-phone"></i> <a href="https://wa.me/584167775771">+58 416-777-5771</a></li>
-          <li><i class="fas fa-envelope"></i> info@grado33marketing.com</li>
+          <li><i class="fas fa-envelope"></i> Correo36000@gmail.com</li>
           <li><i class="fas fa-clock"></i> Lun-Vie 09:00-18:00</li>
           <li><i class="fab fa-whatsapp" style="color: var(--whatsapp)"></i> 24/7 por WhatsApp</li>
+          <li><a href="#legal"><i class="fas fa-balance-scale" style="color: var(--primary)"></i> Trámites Legales · SAREN</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Municipios de Barinas</h5>
+        <ul>
+          <li><a href="/barinas/barinas/">📍 Barinas (Capital)</a></li>
+          <li><a href="/barinas/sabaneta/">Sabaneta</a></li>
+          <li><a href="/barinas/socopo/">Socopó</a></li>
+          <li><a href="/barinas/arismendi/">Arismendi</a></li>
+          <li><a href="/barinas/barinitas/">Barinitas</a></li>
+          <li><a href="/barinas/barrancas/">Barrancas</a></li>
+          <li><a href="/barinas/santa-barbara/">Santa Bárbara</a></li>
+          <li><a href="/barinas/obispos/">Obispos</a></li>
+          <li><a href="/barinas/ciudad-bolivia/">Ciudad Bolivia</a></li>
+          <li><a href="/barinas/libertad/">Libertad</a></li>
+          <li><a href="/barinas/ciudad-de-nutrias/">Ciudad de Nutrias</a></li>
+          <li><a href="/barinas/el-canton/">El Cantón</a></li>
         </ul>
       </div>
     </div>
